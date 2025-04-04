@@ -71,7 +71,30 @@ To start the HireBuddy application, run:
 
     node server.js
 
+## Project Structure 
 
+	HireBuddy/
+	├── controllers/
+	│   └── authController.js    # Handles authentication logic
+	├── models/
+	│   └── User.js              # Defines the User schema for MongoDB
+	├── routes/
+	│   └── authRoutes.js        # Maps URLs to controller functions
+	├── views/
+	│   ├── login.ejs            # Template for the login page
+	│   └── register.ejs         # Template for the registration page
+	├── public/
+	│   ├── css/
+	│   │   └── style.css        # Styling for the application
+	│   └── js/
+	│       └── script.js        # Client-side JavaScript
+	└── server.js                # Entry point for the application
 
+## Technologies Used
+## Future Enhancements
+## Troubleshooting
+## License
+## Author
+	JJS
 ## Acknowledgements
 	- Developed as part of the SIT737 Cloud Native Application Development unit at Deakin University.
