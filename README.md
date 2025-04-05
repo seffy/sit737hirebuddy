@@ -56,13 +56,20 @@ HireBuddy follows the Model-View-Controller (MVC) design pattern:
     ```
     This command installs required packages such as `express`, `mongoose`, `ejs`, `body-parser`, and `bcrypt`.
 
-3. **Configure MongoDB Connection:**
+   These packages are used as follows:
+   - **express**: The web framework for handling routing and middleware.
+   - **mongoose**: The ODM for MongoDB to manage your database.
+   - **ejs**: The templating engine for rendering dynamic HTML.
+   - **body-parser**: Middleware to parse incoming request bodies.
+   - **bcrypt**: For hashing passwords securely.
+
+4. **Configure MongoDB Connection:**
    Ensure that your MongoDB instance is running. You may need to update the connection string in `server.js`:
     ```javascript
     mongoose.connect('mongodb://localhost/hirebuddy', { useNewUrlParser: true, useUnifiedTopology: true });
     ```
 
-4. **Docker Setup:**
+5. **Docker Setup:**
 
 ## Usage
 
