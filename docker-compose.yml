@@ -9,6 +9,7 @@ services:
       - MONGO_URI=mongodb://mongo:27017/hirebuddy
     depends_on:
       - mongo
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7017/health"]
       interval: 30s
