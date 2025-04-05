@@ -107,9 +107,11 @@ body {
 .bg-1 {
 
   background-image: url("../img/bg-1.jpg");
-  background-position: center right;
+  background-position:center;
   background-size: cover;
   background-repeat: no-repeat;
+	background-attachment: fixed;
+	
 }
 
 .bg-2 {
@@ -123,7 +125,7 @@ body {
 
 .login-container {
 	margin: auto;
- display: flex;
+display: flex;
   justify-content: center;
   align-items: center;
 	height: 100vh;
@@ -142,7 +144,7 @@ body {
 
   
   .login-form-container {
-	  
+	 display: block;
     width: 400px;
     margin: 0 auto;
     padding: 30px;
@@ -296,4 +298,17 @@ body {
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: -1; /* Specify a stack order in case you're using a different order for other elements */
 
+}
+
+.logo {
+	background-image: url("../img/logo.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 160px;
+
+		margin: 0 auto;
+ display: block;
+
+	
 }

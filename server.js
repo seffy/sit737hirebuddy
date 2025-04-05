@@ -8,7 +8,7 @@ const authRoutes = require('./routes/authRoutes');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/hirebuddy', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/hirebuddy', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -26,6 +26,11 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use('/', authRoutes);
+
+// Healthcheck endpoint for Docker
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 const PORT = process.env.PORT || 7017;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
