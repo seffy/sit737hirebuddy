@@ -1,14 +1,13 @@
-version: '3.8'
-
 services:
   app:
     build: .
     ports:
-      - "7017:7017"
+      - "8017:7017"
     environment:
       - MONGO_URI=mongodb://mongo:27017/hirebuddy
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7017/health"]
@@ -23,6 +22,11 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   mongo-data:

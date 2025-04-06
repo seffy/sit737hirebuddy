@@ -2,18 +2,22 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
+require('dotenv').config(); // At the top of your app
 
 const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/hirebuddy', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+
+
+
+const dbURI = process.env.MONGO_URI;
+
+mongoose.connect(dbURI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
