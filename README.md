@@ -62,14 +62,19 @@ HireBuddy follows the Model-View-Controller (MVC) design pattern:
    - **ejs**: The templating engine for rendering dynamic HTML.
    - **body-parser**: Middleware to parse incoming request bodies.
    - **bcrypt**: For hashing passwords securely.
+  
+  ```bash
+npm init -y
+npm install express mongoose ejs body-parser bcrypt
+  ```
 
-4. **Configure MongoDB Connection:**
+3. **Configure MongoDB Connection:**
    Ensure that your MongoDB instance is running. You may need to update the connection string in `server.js`:
     ```javascript
     mongoose.connect('mongodb://localhost/hirebuddy', { useNewUrlParser: true, useUnifiedTopology: true });
     ```
 
-5. **Docker Setup:**
+4. **Docker Setup:**
 
 ## Usage
 
