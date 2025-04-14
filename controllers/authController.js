@@ -60,7 +60,7 @@ exports.loginUser = async (req, res) => {
     }
 
     // TODO: Establish user session here for authenticated routes
-    res.send('Login successful');
+    res.send('Welcome to HireBuddy,Buddy!');
   } catch (err) {
     console.error(err);
     res.render('login', { error: 'Login error' });
