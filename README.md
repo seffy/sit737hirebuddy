@@ -109,4 +109,4 @@ To start the HireBuddy application, run:
 ## Author
 	JJS
 ## Acknowledgements
-	- Developed as part of the SIT737 Cloud Native Application Development unit at Deakin University.
+	- Developed as part of the SIT737 Cloud Native Application Development unit
